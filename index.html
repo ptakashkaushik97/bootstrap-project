@@ -55,10 +55,9 @@
             <div class="col-lg-7">
                 <h1 class="displey-4 fw-bold">Apni chhat se bijli banayein, bill ghatayein.</h1>
                 <p class="lead mt-3">Rooftop solar ki site visit se lekar installation aur PM Surya Ghar subsidy ke kagaz tak, hum poora kaam sambhalte hain.</p>
-                <ul>
+                
                     <a href="#contact" class="btn btn-sun btn-lg">Book a free site visit</a>
                     <a href="#process" class="btn btn-outline-light btn-lg">Kaise kaam hota hai</a>
-                </ul>
             </div>
             <div class="col-lg-5">
                 <div class="stat">
@@ -117,7 +116,7 @@
     </div>
 </section>
 
-<div class="container py-5" id="process">
+<div class="container py-5">
     <div class="row">
         <div class="col-5">
             <h2 class="fw-bold fs-2xl">Chaar kadam mein solar</h2>
@@ -135,7 +134,7 @@
 </div>
 
 
-<div class="py-5" id="packges">
+<div class="py-5" id="packages">
     <h2 class="fw-bold mb-1">Packages</h2>
     <p class="text-secondary mb-4">Prices demo hain. Asli quote site visit ke baad milta hai.</p>
     <div class="row">
@@ -202,9 +201,9 @@
 <section class="bg-light py-5" id="calculator">
     <div class="row align-item-center g-5">
         <div class="col-lg-5">
-            <h2 fw-bold>Kitni bachat hogi?</h2>
+            <h2 class="fw-bold">Kitni bachat hogi?</h2>
             <p class="text-secondary">Apna mahine ka bill likhein. Ye sirf mota andaaza hai, asli number site visit par tay hota hai.</p>
-            <label for="calcbill">Mahine ka bijli bill: <span class="billText fw-bold">₹3,000</span></label><br>
+            <label >Mahine ka bijli bill: <span class="billText fw-bold">₹3,000</span></label><br>
          <input type="range" class="form-range" id="calcBill" min="500" max="15000" step="100" value="3000">
         </div>
         <div class="col-lg-7">
@@ -255,7 +254,7 @@
         <div class="table">
             <div class=" row">
                 <div class="accordion-item col-lg-8 justify-content-center">
-                    <h3 class="fw-bold mb-4">Aksar pooche jaane wale sawaal</h2>
+                    <h3 class="fw-bold mb-4">Aksar pooche jaane wale sawaal</h3>
                     
                 <div class="mx-10">
                     <h3 class="accordion-header align-content-center">
@@ -335,11 +334,11 @@
                 </div>
                 <div class="col-lg-3">
                     <label for="mobile">Phone no.</label>
-                    <input type="number" id="mobile" minlength="10" maxlength="10" class="input-group-text">
+                    <input type="number" id="mobile" class="input-group-text">
 
                     <label for="size">system size</label><br>
-                        <select defaultvalue="" name="size" class="form-select" > 
-                            <option value="">Pata nahi,Aap bataein</option>
+                        <select id="size" name="size" class="form-select" > 
+                            <option >Pata nahi,Aap bataein</option>
                             <option>3kw</option>
                             <option>4kw</option>
                             <option>5kw</option>

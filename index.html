@@ -28,13 +28,20 @@
     .btn-sun { background: var(--sun); color: #14232e; font-weight: 600;}
     .btn-sun:hover { background: #d9a504; color: #14232e; }
     .btn-primary { --bs-btn-bg: #0b3c5d; --bs-btn-border-color: #0b3c5d; --bs-btn-hover-bg: #082c45; --bs-btn-hover-border-color: #082c45; }
+    @media screen and (max-width: 768px) {     
+        .navbar {flex-direction: column;}     
+        .sticky-top{position: inherit;} 
+        .menu{flex-direction: column;
+        justify-content: flex-end;}
+    }
  </style>
 </head>
 <body>
     
-   <div class="navbar-expand-lg bg-white border-bottom sticky-top py-3 fs-5">
+   <div class="navbar navbar-expand-lg bg-white border-bottom sticky-top py-3">
     <nav class="d-flex justify-content-between container ">
     <a class="fw-bold text-primary nav-item nav-link active">GANPATI SOLAR ENERGY SOLUTION</a>
+    <button class="navbar-toggler" type="button"><i class="fa-solid fa-bars"></i></button>
     <div class="navbar-nav" id="menu">
         <ol class="nav gap-5">
         <li class="nav-item"><a class="nav-link active" href="#services">Service</a></li>
@@ -44,7 +51,7 @@
         <li class="nav-item"><a class="nav-link active" href="#faq">FAQ</a></li>
         <li class="nav-item"><a class="nav-link active" href="#contact">Contact</a></li>
         <li class="nav-item btn-primary"><a class="nav-link active" href="#contact">Free quotes</a></li>
-    </ol>
+        </ol>
     </div>
     </nav>
    </div>
@@ -116,7 +123,7 @@
     </div>
 </section>
 
-<div class="container py-5">
+<div class="container py-5" id="process">
     <div class="row">
         <div class="col-5">
             <h2 class="fw-bold fs-2xl">Chaar kadam mein solar</h2>
@@ -134,7 +141,7 @@
 </div>
 
 
-<div class="py-5" id="packages">
+<div class="py-5" id="packges">
     <h2 class="fw-bold mb-1">Packages</h2>
     <p class="text-secondary mb-4">Prices demo hain. Asli quote site visit ke baad milta hai.</p>
     <div class="row">
@@ -395,6 +402,18 @@
 
 
 
+</script>
+
+
+<script>
+  document.querySelectorAll('#menu .nav-link, #menu .btn').forEach(link => {
+    link.addEventListener('click', () => {
+      const menu = document.getElementById('menu');
+      if (menu.classList.contains('show')) {
+        bootstrap.Collapse.getInstance(menu)?.hide();
+      }
+    });
+  });
 </script>
 </body>
 </html>

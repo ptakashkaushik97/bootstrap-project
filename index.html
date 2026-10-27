@@ -28,32 +28,42 @@
     .btn-sun { background: var(--sun); color: #14232e; font-weight: 600;}
     .btn-sun:hover { background: #d9a504; color: #14232e; }
     .btn-primary { --bs-btn-bg: #0b3c5d; --bs-btn-border-color: #0b3c5d; --bs-btn-hover-bg: #082c45; --bs-btn-hover-border-color: #082c45; }
-    @media screen and (max-width: 768px) {     
-        .navbar {flex-direction: column;}     
-        .sticky-top{position: inherit;} 
-        .menu{flex-direction: column;
-        justify-content: flex-end;}
+     .nav-link{color: #000000;}
+    @media screen and (max-width: 768px) {          
+
+        nav{position: sticky; top: 70px; background: #1140604e; z-index: 2;}
+        .nav-link{color: #fff;}
+
+        .navbar-toggler{display: inherit;}
+
+        nav ul{flex-flow: row;}
+
+        .gap-5{gap: 10px !important;}
+
+        #menu{display: none;}
+
+       
     }
  </style>
 </head>
 <body>
     
-   <div class="navbar navbar-expand-lg bg-white border-bottom sticky-top py-3">
-    <nav class="d-flex justify-content-between container ">
+   <div class="sticky-top navbar navbar-expand-lg bg-white border-bottom sticky-top py-3">
+    <div class="d-flex justify-content-between container ">
     <a class="fw-bold text-primary nav-item nav-link active">GANPATI SOLAR ENERGY SOLUTION</a>
-    <button class="navbar-toggler" type="button"><i class="fa-solid fa-bars"></i></button>
-    <div class="navbar-nav" id="menu">
-        <ol class="nav gap-5">
-        <li class="nav-item"><a class="nav-link active" href="#services">Service</a></li>
-        <li class="nav-item"><a class="nav-link active" href="#process">Process</a></li>
-        <li class="nav-item"><a class="nav-link active" href="#packges">Packges</a></li>
-        <li class="nav-item"><a class="nav-link active" href="#calculator">Calculator</a></li>
-        <li class="nav-item"><a class="nav-link active" href="#faq">FAQ</a></li>
-        <li class="nav-item"><a class="nav-link active" href="#contact">Contact</a></li>
-        <li class="nav-item btn-primary"><a class="nav-link active" href="#contact">Free quotes</a></li>
-        </ol>
-    </div>
+    <button class="sti nav-btn navbar-toggler" type="button"><i class="fa-solid fa-bars"></i></button>
+    <nav class="navbar-nav" id="menu">
+        <ul class="nav">
+        <li class="nav-item"><a class="nav-link" href="#services">Service</a></li>
+        <li class="nav-item"><a class="nav-link" href="#process">Process</a></li>
+        <li class="nav-item"><a class="nav-link" href="#packges">Packges</a></li>
+        <li class="nav-item"><a class="nav-link" href="#calculator">Calculator</a></li>
+        <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        <li class="nav-item btn-primary"><a class="nav-link " href="#contact">Free quotes</a></li>
+        </ul>
     </nav>
+    </div>
    </div>
 
 <header class="hero ">
@@ -336,8 +346,7 @@
                     <input type="text" id="name" class="input-group-text">
                     <label for="billamount">Mahine ka bijli ka bill</label>
                     <input type="number" id="billamount" class="input-group-text">
-                    <div><button class="btn-solid theme-accent p-3 bi-r-circle m-3">Quote request bhejen</button></div>
-
+                    
                 </div>
                 <div class="col-lg-3">
                     <label for="mobile">Phone no.</label>
@@ -352,6 +361,8 @@
                             <option>6kw</option>
                             <option>7kw</option>
                         </select>
+                        <div><button class="quote btn-solid theme-accent p-3 bi-r-circle m-3">Quote request bhejen</button><output class="quote-out"></output></div>
+
                 </div>
                 <div class="col-lg-3"></div>
         </div>
@@ -361,7 +372,7 @@
     
     
         <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
-            <div>© 2026 Ganpati Solar. Ye ek demo page hai.</div>
+            <div>© 2026 Ganpati Solar energy solution</div>
     
             <div class="d-flex align-items-center gap-3 list-unstyled mb-0">
                 <a href="https://ganpatisolarenergysolution.in/"><i class="fa-brands fa-chrome"></i></a>
@@ -400,20 +411,15 @@
         })
     });
 
-
-
-</script>
-
-
-<script>
-  document.querySelectorAll('#menu .nav-link, #menu .btn').forEach(link => {
-    link.addEventListener('click', () => {
-      const menu = document.getElementById('menu');
-      if (menu.classList.contains('show')) {
-        bootstrap.Collapse.getInstance(menu)?.hide();
-      }
+    $(".nav-btn").click(function(){
+        $("#menu").slideToggle();
     });
-  });
+    $(".quote").click(function(){
+        alert("We will contact you soom");
+    });
+
+
+
 </script>
 </body>
 </html>
